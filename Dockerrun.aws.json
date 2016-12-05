@@ -7,6 +7,18 @@
       "image": "054960824384.dkr.ecr.eu-west-1.amazonaws.com/pre-pwpr:v0.1.13",
       "environment": [
         {
+          "name": "AWS_ACCESS_KEY_ID",
+          "value": "AKIAIEYHGYE3AVY27YHQ"
+        },
+        {
+          "name": "AWS_SECRET_ACCESS_KEY",
+          "value": "r9I/xu8gqamD7E9Yvwc6CKCn+Wvci7neBng5O5Uh"
+        },
+        {
+          "name": "AWS_REGION",
+          "value": "eu-west-1"
+        },
+        {
           "name": "PP_PWPR_DATABASE_PASSWORD",
           "value": "INSERT PASSWORD"
         },
