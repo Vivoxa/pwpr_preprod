@@ -4,7 +4,7 @@
   "containerDefinitions": [
     {
       "name": "pwpr-app",
-      "image": "054960824384.dkr.ecr.eu-west-1.amazonaws.com/pre-pwpr:v0.1.13",
+      "image": "054960824384.dkr.ecr.eu-west-1.amazonaws.com/pre-pwpr:test_processing",
       "environment": [
         {
           "name": "AWS_ACCESS_KEY_ID",
