@@ -4,7 +4,7 @@
   "containerDefinitions": [
     {
       "name": "pwpr-app",
-      "image": "054960824384.dkr.ecr.eu-west-1.amazonaws.com/pre-pwpr:test_processing_v3",
+      "image": "054960824384.dkr.ecr.eu-west-1.amazonaws.com/pre-pwpr:v0.1.0",
       "environment": [
         {
           "name": "AWS_ACCESS_KEY_ID",
@@ -45,6 +45,26 @@
         {
           "name": "SPREADSHEET_WORKER_LOG_PATH",
           "value": "log/spreadsheet_worker.log"
+        },
+        {
+          "name": "REPORTS_QUEUE_HOST",
+          "value": "reports_email_queue"
+        },
+        {
+          "name": "REPORTS_QUEUE_NAME",
+          "value": "queue_rabbitmq:5672"
+        },
+        {
+          "name": "REPORTS_WORKER_LOG_PATH",
+          "value": "log/reports_email_worker.log"
+        },
+        {
+          "name": "FROM_EMAIL",
+          "value": "notifications@app-pwpr.com"
+        },
+        {
+          "name": "SES_ENDPOINT",
+          "value": "email-smtp.us-east-1.amazonaws.com"
         }
       ],
       "essential": true,
