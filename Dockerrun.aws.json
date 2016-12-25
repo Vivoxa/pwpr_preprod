@@ -48,11 +48,11 @@
         },
         {
           "name": "REPORTS_QUEUE_HOST",
-          "value": "reports_email_queue"
+          "value": "queue_rabbitmq:5672"
         },
         {
           "name": "REPORTS_QUEUE_NAME",
-          "value": "queue_rabbitmq:5672"
+          "value": "reports_email_queue"
         },
         {
           "name": "REPORTS_WORKER_LOG_PATH",
