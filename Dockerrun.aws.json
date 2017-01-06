@@ -99,7 +99,7 @@
       "name": "mailhog",
       "image": "mailhog/mailhog",
       "essential": true,
-      "memory": 128,
+      "memory": 1000,
       "portMappings": [
         {
           "hostPort": 1025,
@@ -115,7 +115,7 @@
       "name": "queue_rabbitmq",
       "image": "library/rabbitmq:3-management",
       "essential": true,
-      "memory": 256,
+      "memory": 500,
       "portMappings": [
         {
           "hostPort": 15672,
