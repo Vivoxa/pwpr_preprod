@@ -4,15 +4,39 @@
   "containerDefinitions": [
     {
       "name": "pwpr-app",
-      "image": "054960824384.dkr.ecr.eu-west-1.amazonaws.com/pre-pwpr:v0.1.13",
+      "image": "054960824384.dkr.ecr.eu-west-1.amazonaws.com/pre-pwpr:v0.1.1",
       "environment": [
         {
+          "name": "BUNNY_USERNAME",
+          "value": "guest"
+        },
+        {
+          "name": "BUNNY_PASSWORD",
+          "value": "guest"
+        },
+        {
+          "name": "AWS_ACCESS_KEY_ID",
+          "value": "AKIAIEYHGYE3AVY27YHQ"
+        },
+        {
+          "name": "AWS_SECRET_ACCESS_KEY",
+          "value": "r9I/xu8gqamD7E9Yvwc6CKCn+Wvci7neBng5O5Uh"
+        },
+        {
+          "name": "AWS_REGION",
+          "value": "eu-west-1"
+        },
+        {
           "name": "PP_PWPR_DATABASE_PASSWORD",
-          "value": "INSERT PASSWORD"
+          "value": "MyS3cur3Password"
         },
         {
           "name": "SECRET_KEY_BASE",
-          "value": "INSERT SECRET KEY BASE"
+          "value": "0c64deb461266abb601d62b86780c92e8220f1e80fcaa2faa48a8005b7c4cf5dba4f921f5be0e288558a0c3f10ce23302bb54f593a19e7b6260cdd29ebb04760"
+        },
+        {
+          "name": "RAILS_SERVE_STATIC_FILES",
+          "value": "true"
         },
         {
           "name": "DOCKER_IP",
@@ -29,6 +53,34 @@
         {
           "name": "SPREADSHEET_WORKER_LOG_PATH",
           "value": "log/spreadsheet_worker.log"
+        },
+        {
+          "name": "REPORTS_QUEUE_HOST",
+          "value": "queue_rabbitmq:5672"
+        },
+        {
+          "name": "REPORTS_QUEUE_NAME",
+          "value": "reports_email_queue"
+        },
+        {
+          "name": "REPORTS_WORKER_LOG_PATH",
+          "value": "log/reports_email_worker.log"
+        },
+        {
+          "name": "FROM_EMAIL",
+          "value": "notifications@app-pwpr.com"
+        },
+        {
+          "name": "SES_ENDPOINT",
+          "value": "email-smtp.us-east-1.amazonaws.com"
+        },
+        {
+          "name": "APP_CO_SIGN_IN_URL",
+          "value": "http://pre-pwpr.com/company_operators/sign_in"
+        },
+        {
+          "name": "APP_SO_SIGN_IN_URL",
+          "value": "http://pre-pwpr.com/scheme_operators/sign_in"
         }
       ],
       "essential": true,
@@ -47,7 +99,7 @@
       "name": "mailhog",
       "image": "mailhog/mailhog",
       "essential": true,
-      "memory": 128,
+      "memory": 1000,
       "portMappings": [
         {
           "hostPort": 1025,
@@ -63,7 +115,7 @@
       "name": "queue_rabbitmq",
       "image": "library/rabbitmq:3-management",
       "essential": true,
-      "memory": 256,
+      "memory": 500,
       "portMappings": [
         {
           "hostPort": 15672,
