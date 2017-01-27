@@ -40,7 +40,7 @@
         },
         {
           "name": "DOCKER_IP",
-          "value": "52.16.227.215"
+          "value": "172.31.17.113"
         },
         {
           "name": "SPREADSHEET_QUEUE_NAME",
